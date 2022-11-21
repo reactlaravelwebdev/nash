@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Css Landing Page 1</title>
+
+    <!-- css file -->
+    <link href="./style.css" rel="stylesheet" />
+
+    <!-- jquery link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <!-- slick slider -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script type="text/javascript" src="./js/slider.js"></script>
+
+</head>
+
+<body>
+
+    <!-- header -->
+    <header class="sticky top-0 z-[100]">
+        <nav class="bg-secondary md:px-10 px-4">
+            <div class="mx-auto max-w-container py-6">
+                <div class="relative flex items-center justify-between">
+                    <div class="flex flex-1 items-center sm:items-stretch sm:justify-between">
+                        <div class="flex flex-shrink-0 items-center">
+                            <img class="hidden lg:block lg:h-8 w-auto" src="./img/logo.png" alt="Your Company">
+                            <img class="lg:hidden block w-auto max-w-[120px]" src="./img/logo.png" alt="Your Company">
+                        </div>
+                        <div class="hidden lg:ml-6 lg:block nav_link_wrapper">
+                            <div class="flex items-center gap-x-10 nav_links">
+                                <a href="#how-it-works" class="nav_link text-primary leading-[27px] tracking-[.5px] text-lg font-semibold duration-200 hover:opacity-60">How It Works</a>
+                                <a href="#who-we-are" class="nav_link text-primary leading-[27px] tracking-[.5px] text-lg duration-200 font-semibold hover:opacity-60">Who We Are</a>
+                                <a href="#careers" class="nav_link text-primary leading-[27px] tracking-[.5px] text-lg duration-200 font-semibold hover:opacity-60">Careers</a>
+                                <a href="#blog" class="nav_link text-primary leading-[27px] tracking-[.5px] text-lg duration-200 font-semibold hover:opacity-60">Blog</a>
+                                <a href="#" class="nav_link text-primary leading-[27px] tracking-[1px] bg-white duration-200 font-semibold hover:bg-green hover:text-white py-5 px-10 rounded-[60px] text-base">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center lg:hidden">
+                        <!-- Mobile menu button-->
+                        <button type="button" id="menu-btn" class="inline-flex items-center justify-center text-gray-400 hover:text-white z-40 -mt-1.5" aria-controls="mobile-menu" aria-expanded="false">
+                            <svg class="block h-10 w-10 text-primary open-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                            <svg class="hidden h-10 w-10 text-white close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile menu, show/hide based on menu state. -->
+            <div class="mobile-menu hidden bg-primary fixed w-full h-screen flex-wrap justify-center gap-x-10 top-0 left-0 z-30 md:px-10 md:py-7 px-4 py-6" id="mobile-menu">
+                <div class="logo w-full">
+                    <a href="#">
+                        <img class="max-w-[120px]" src="./img/logo-white.svg">
+                    </a>
+                </div>
+                <div class="flex flex-wrap gap-x-[30px] w-full sm:content-start content-center justify-center sm:flex-row flex-col items-center gap-y-9">
+                    <a href="#" class="text-2xl text-white font-semibold" aria-current="page">How It Works</a>
+                    <a href="#" class="text-2xl text-white font-semibold">Who We Are</a>
+                    <a href="#" class="text-2xl text-white font-semibold">Careers</a>
+                    <a href="#" class="text-2xl text-white font-semibold">Blog</a>
+                    <div class="block">
+                        <a href="#" class="inline-block text-xl text-primary bg-white hover:bg-secondary duration-200 font-semibold tracking-[1px] rounded-[60px] sm:py-5 sm:px-10 py-3.5 px-8">Contact Us</a>
+                    </div>
+                </div>
+                <div class="header-social-links grid grid-cols-2 gap-x-10 items-start w-fit">
+                    <a class="w-6 h-6 text-white hover:text-secondary duration-200" href="#">
+                        <svg width="100%" height="100%" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21.9708 6.46378C21.4547 7.15213 20.8309 7.75258 20.1235 8.24195C20.1235 8.42177 20.1235 8.60158 20.1235 8.79139C20.1292 12.0568 18.8249 15.1879 16.5029 17.4828C14.181 19.7777 11.0357 21.0443 7.77211 20.9988C5.88538 21.0051 4.02281 20.5743 2.3303 19.7401C2.23904 19.7003 2.18018 19.61 2.18053 19.5103V19.4005C2.18053 19.257 2.29676 19.1407 2.44014 19.1407C4.29475 19.0796 6.0832 18.4366 7.55244 17.3026C5.87376 17.2688 4.36338 16.2744 3.66829 14.7453C3.63318 14.6617 3.64411 14.5659 3.69713 14.4925C3.75016 14.419 3.83761 14.3785 3.9279 14.3856C4.43809 14.4369 4.95337 14.3894 5.44561 14.2458C3.59249 13.8611 2.20007 12.3227 2.0008 10.4397C1.99371 10.3494 2.03419 10.2619 2.10761 10.2088C2.18103 10.1558 2.27677 10.1448 2.36026 10.18C2.85755 10.3994 3.39439 10.515 3.93788 10.5196C2.31411 9.45384 1.61274 7.42672 2.23045 5.58469C2.29421 5.4057 2.4474 5.27347 2.63372 5.2366C2.82004 5.19972 3.01201 5.26365 3.13908 5.40487C5.33027 7.73695 8.34099 9.12662 11.5364 9.28088C11.4546 8.95427 11.4143 8.61862 11.4166 8.28191C11.4465 6.51636 12.5389 4.94357 14.1825 4.29986C15.826 3.65615 17.6953 4.06893 18.9153 5.34494C19.747 5.18651 20.551 4.90716 21.3018 4.51579C21.3568 4.48145 21.4265 4.48145 21.4815 4.51579C21.5158 4.57081 21.5158 4.64058 21.4815 4.6956C21.1178 5.52835 20.5035 6.2268 19.7241 6.69355C20.4066 6.6144 21.0771 6.45341 21.7211 6.21404C21.7754 6.17713 21.8466 6.17713 21.9009 6.21404C21.9463 6.23482 21.9802 6.27457 21.9937 6.32269C22.0072 6.37081 21.9988 6.42242 21.9708 6.46378Z" fill="currentColor"></path>
+                            <title>Twitter icon</title>
+                            </svg>
+                    </a>
+                    <a class="w-6 h-6 text-white hover:text-secondary duration-200" href="#">
+                        <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.0643 6.87891C14.7878 6.87891 13.7695 8.12408 13.1994 8.99607V7.18082H8.9126C8.96886 8.38474 8.9126 20.002 8.9126 20.002H13.1994V12.8422C13.1994 12.4597 13.2276 12.0771 13.3401 11.8033C13.6495 11.0382 14.3546 10.245 15.5398 10.245C17.0925 10.245 17.7132 11.4208 17.7132 13.1441V20.002H22V12.651C22 8.71103 19.8847 6.87891 17.0643 6.87891Z" fill="currentColor"></path>
+                            <path d="M6.53977 7.18066H2.25293V20.0018H6.53977V7.18066Z" fill="currentColor"></path>
+                            <path d="M4.42471 1C2.95826 1 2 1.95826 2 3.21468C2 4.44485 2.93013 5.43124 4.37033 5.43124H4.39846C5.89304 5.43124 6.82504 4.44672 6.82504 3.21468C6.79504 1.95638 5.89116 1 4.42471 1Z" fill="currentColor"></path>
+                            <title>LinkedIn icon</title>
+                            </svg>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+
+    <!-- main content -->
+    <main class="main-content overflow-hidden">
+
+        <!-- banner sec -->
+        <section class="banner-sec bg-secondary md:px-10 px-4">
+            <div class="max-w-container mx-auto md:pt-[100px] pt-[50px]">
+                <div class="banner-wrapper relative lg:pb-[430px] flex flex-wrap justify-center items-center">
+                    <div class="banner-content max-w-sm mx-auto md:text-center sm:text-left">
+                        <h1>The Most Reliable Way to Organize and Manage Delivery</h1>
+                        <div class="content_wrapper max-w-[638px] md:mx-auto w-full my-5 lg:my-[70px] md:mt-10 md:mb-[60px]">
+                            <p class="text-primary">Capture all your last-mile delivery tech, logistics, and operations with Nash, and offer a rewarding experience every time.</p>
+                        </div>
+                        <div class="links_wrapper">
+                            <a href="#" class="delivery-btn bg-primary hover:bg-green text-white text-base inline-block rounded-[60px] duration-200 relative z-20 md:py-[30px] md:px-[50px] py-5 px-10 tracking-[1px] leading-[26.4px]">Start Delivering Today</a>
+                        </div>
+                    </div>
+                    <!-- banner-graphics -->
+                    <img class="graphic-1 hidden md:block md:relative md:w-full md:-mt-[121px] md:min-w-[auto] lg:absolute lg:bottom-0 lg:w-[108%] lg:min-w-[1190px] max-w-lg z-10" src="./img/banner-bg.png">
+                    <img class="mob-graphic-1 md:hidden mt-[60px] max-w-[400px] w-full" src="./img/mobile-banner-bg.png">
+                    <img class="graphic-2 hidden md:block absolute z-20 max-w-[260px] lg:-right-1.5 lg:w-[22%] lg:-bottom-[149px] md:-right-1.5 md:-bottom-[87px] md:w-[20%]" src="./img/banner-bg-2.png">
+                </div>
+            </div>
+        </section>
+
+        <!-- grow business sec -->
+        <section class="grow-business bg-primary md:px-10 px-4">
+            <div class="max-w-container mx-auto">
+                <div class="grow-business-wrapper lg:py-[150px] md:py-[120px] py-[50px]">
+
+                    <!-- grow-business-content -->
+                    <div class="grow-business-content lg:mb-[100px] md:mb-[70px] mb-10">
+                        <div class="heading_wrap w-full md:max-w-[472px] lg:mb-[70px] md:mb-[50px] mb-5">
+                            <h3 class="text-white">Grow your business with <span class="text-secondary">confidence</span></h3>
+                        </div>
+                        <div class="text_wrap text-white grid gap-y-6 md:grid-cols-2 gap-x-8">
+                            <p>Extend your local footprint with tools that are designed to successfully carry out each touchpoint and keep you updated every step of the way—eliminating timing and tracking-related delays.</p>
+                            <p>Explore our use cases to see how you can increase revenue, solve complex routes, and save time in the long-run.</p>
+                        </div>
+                    </div>
+
+                    <!-- grow-business-slides -->
+                    <div class="grow-business-slides-wrapper mb-32">
+                        <div class="grow-business-slide">
+
+                            <!-- slide item 1 -->
+                            <div class="grow-business-slide-item md:pr-8">
+                                <div class="grow-business-slide-img">
+                                    <img class="w-full object-cover rounded-2xl" src="./img/same-hour.jpg" alt="Same hour">
+                                </div>
+                                <div class="grow-business-slide-usecase inline-block mb-5 mt-8 py-1 px-3 border-solid rounded-[40px] border border-white leading-4">
+                                    <label class="text-white text-[10px] font-semibold uppercase tracking-[2px]">Use Case</label>
+                                </div>
+                                <h5 class="grow-business-slide-title text-white">Same hour</h5>
+                                <div class="grow-business-slide-text-wrap text-white text-lg mt-3.5">
+                                    <p class="text-lg">Sign up and start offering on-demand delivery today. Even as quickly as same-hour. Get ahead of communication by sharing tracking status and manage on-the-go.</p>
+                                </div>
+                                <div class="grow-business-slide-viewcase mt-5">
+                                    <a href="#" class="view-case text-white font-semibold text-lg inline-block relative">View Use Case</a>
+                                </div>
+                            </div>
+
+                            <!-- slide item 2 -->
+                            <div class="grow-business-slide-item md:pr-8">
+                                <div class="grow-business-slide-img">
+                                    <img class="w-full object-cover rounded-2xl" src="./img/scheduled.jpg" alt="Scheduled">
+                                </div>
+                                <div class="grow-business-slide-usecase grow-business-slide-usecase inline-block mb-5 mt-8 py-1 px-3 border-solid rounded-[40px] border border-white leading-4">
+                                    <label class="text-white text-[10px] font-semibold uppercase tracking-[2px]">Use Case</label>
+                                </div>
+                                <h5 class="grow-business-slide-title text-white">Scheduled</h5>
+                                <div class="grow-business-slide-text-wrap text-white text-lg mt-3.5">
+                                    <p class="text-lg">Control delivery times with ease. You may also schedule jobs or enable customers to select times they prefer—so you can save time from the back and forth. </p>
+                                </div>
+                                <div class="grow-business-slide-viewcase mt-5">
+                                    <a href="#" class="view-case text-white font-semibold text-lg inline-block relative">View Use Case</a>
+                                </div>
+                            </div>
+
+                            <!-- slide item 3 -->
+                            <div class="grow-business-slide-item md:pr-8">
+                                <div class="grow-business-slide-img">
+                                    <img class="w-full object-cover rounded-2xl" src="./img/multi-dropoff-routes.jpg" alt="Multi-dropoff routes">
+                                </div>
+                                <div class="grow-business-slide-usecase grow-business-slide-usecase inline-block mb-5 mt-8 py-1 px-3 border-solid rounded-[40px] border border-white leading-4">
+                                    <label class="text-white text-[10px] font-semibold uppercase tracking-[2px]">Use Case</label>
+                                </div>
+                                <h5 class="grow-business-slide-title text-white">Multi-dropoff routes</h5>
+                                <div class="grow-business-slide-text-wrap text-white text-lg mt-3.5">
+                                    <p class="text-lg">Create efficiencies in your business by designing multi-dropoff routes. In Nash, you’ll get to monitor and manage each delivery in real time. </p>
+                                </div>
+                                <div class="grow-business-slide-viewcase mt-5">
+                                    <a href="#" class="view-case text-white font-semibold text-lg inline-block relative">View Use Case</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- how works -->
+        <section class="how-work md:px-10 px-4">
+            <div class="max-w-container mx-auto">
+                <div class="how-work-wrapper lg:py-[150px] md:py-120 py-[50px]">
+                    <h2 class="md:text-center">How Nash works</h2>
+                    <div class="how-work-content-list md:mt-[100px] mt-[50px]">
+
+                        <!-- content list 1 -->
+                        <div class="how-work-content grid md:grid-cols-2 gap-x-8 lg:items-end md:items-center">
+                            <!-- listing text -->
+                            <div class="how-work-text-wrap md:max-w-[534px] w-full">
+                                <h4 class="md:mb-[30px] mb-4">Manage everything in one</h4>
+                                <p class="mb-[30px]">Efficiently track and manage orders live from the point of pickup to the point of delivery.</p>
+                                <ul class="content-list list-none">
+                                    <span class="list-title block text-xl mb-[30px] font-semibold">What this means:</span>
+                                    <li class="flex gap-x-5 mb-4 items-center text-lg font-serif">
+                                        <img src="./img/correct.svg" alt="Correct"> Stay updated and resolve on-the-go
+                                    </li>
+                                    <li class="flex gap-x-5 mb-4 items-center text-lg font-serif">
+                                        <img src="./img/correct.svg" alt="Correct"> Visualize numerous routes at a time, including multi-dropoff jobs
+                                    </li>
+                                    <li class="flex gap-x-5 mb-4 items-center text-lg font-serif">
+                                        <img src="./img/correct.svg" alt="Correct"> Seamlessly log and switch between communication with external partners
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- text graphic -->
+                            <div class="how-work-graphic-wrapper relative md:mt-[90px] md:-mb-2.5 md:justify-self-end mt-5">
+                                <img class="relative md:-right-4 md:w-[102%] md:max-w-[489px] z-10 w-full right-0" src="./img/list_graphic_1.1.svg" alt="list tgraphic 1">
+                                <img class="absolute md:-left-[4%] md:-top-[18%] z-20 md:w-[37%] max-w-[183px] left-0 -top-[8%] w-[30%]" src="./img/list_graphic_1.2.png" alt="list tgraphic 2">
+                                <img class="absolute w-[52%] left-[19%] -top-[81%] max-w-[258px] hidden lg:block" src="./img/list_graphic_1.3.svg" alt="list tgraphic 3">
+                            </div>
+                        </div>
+
+                        <!-- content list 2 -->
+                        <div class="how-work-content grid md:grid-cols-2 gap-x-8 gap-y-10 lg:items-end md:items-center lg:mt-[260px] lg:mb-40 md:my-[100px] my-[60px]">
+                            <!-- text graphic -->
+                            <div class="how-work-graphic-wrapper relative -mb-2.5 md:justify-self-start order-2 md:order-1">
+                                <img class="relative -left-6 md:w-[102%] max-w-[510px] z-10 w-full" src="./img/list_graphic_2.1.svg" alt="list tgraphic 1">
+                                <img class="absolute left-[79%] -top-[179%] w-[63%] max-w-[314px] hidden lg:block" src="./img/list_graphic_2.2.svg" alt="list tgraphic 2">
+                                <img class="absolute w-[57%] max-w-[283px] left-[76%] top-[48%] hidden lg:block" src="./img/list_graphic_2.3.svg" alt="list tgraphic 3">
+                            </div>
+                            <!-- listing text -->
+                            <div class="how-work-text-wrap md:max-w-[534px] w-full md:justify-self-end md:order-1">
+                                <h4 class="md:mb-[30px] mb-4">Handle flows with ease</h4>
+                                <p class="mb-[30px]">In just a few clicks, seamlessly integrate all delivery logistic, tech, and operations with our Platform or API— making it simple to handle a flux of recurring or one-off deliveries.</p>
+                                <ul class="content-list list-none">
+                                    <span class="list-title block text-xl mb-[30px] font-semibold">What this means:</span>
+                                    <li class="flex gap-x-5 mb-4 items-center text-lg font-serif">
+                                        <img src="./img/correct.svg" alt="Correct"> Activate everything you need at your fingertips, when you need it
+                                    </li>
+                                    <li class="flex gap-x-5 mb-4 items-center text-lg font-serif">
+                                        <img src="./img/correct.svg" alt="Correct"> Automate workflows to optimize operations
+                                    </li>
+                                    <li class="flex gap-x-5 mb-4 items-center text-lg font-serif">
+                                        <img src="./img/correct.svg" alt="Correct"> Offer delivery confidently without forecasting demand at any time
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- content list 3 -->
+                        <div class="how-work-content grid md:grid-cols-2 gap-x-8 gap-y-10 md:items-end">
+                            <!-- listing text -->
+                            <div class="how-work-text-wrap md:max-w-[534px] w-full">
+                                <h4 class="md:mb-[30px] mb-4">Build roadmaps unique to your business</h4>
+                                <p class="mb-[30px]">Create delivery processes that work for you. Our customizable approach let’s you structure delivery according to your business’ needs.</p>
+                                <ul class="content-list list-none">
+                                    <span class="list-title block text-xl mb-[30px] font-semibold">What this means:</span>
+                                    <li class="flex gap-x-5 mb-4 items-center text-lg font-serif">
+                                        <img src="./img/correct.svg" alt="Correct"> Store to store
+                                    </li>
+                                    <li class="flex gap-x-5 mb-4 items-center text-lg font-serif">
+                                        <img src="./img/correct.svg" alt="Correct"> Store to customer
+                                    </li>
+                                    <li class="flex gap-x-5 mb-4 items-center text-lg font-serif">
+                                        <img src="./img/correct.svg" alt="Correct"> Customer to store
+                                    </li>
+                                    <li class="flex gap-x-5 mb-4 items-center text-lg font-serif">
+                                        <img src="./img/correct.svg" alt="Correct"> Multiple-dropoffs
+                                    </li>
+                                    <li class="flex gap-x-5 mb-4 items-center text-lg font-serif">
+                                        <img src="./img/correct.svg" alt="Correct"> + everything in-between
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- text graphic -->
+                            <div class="how-work-graphic-wrapper relative mt-[125px] mb-10 w-full max-w-[473px] flex items-center md:justify-self-end">
+                                <img class="relative md:-ml-2.5 w-[72%] max-w-[341px] z-10" src="./img/list_graphic_3.1.png" alt="list tgraphic 1">
+                                <img class="absolute md:-left-8per -top-[36%] z-20 w-[36%] max-w-[183px]" src="./img/list_graphic_3.2.png" alt="list tgraphic 2">
+                                <img class="absolute right-0 z-30 w-[67%] max-w-[314px] -mb-px rounded-[10px] box-shadow-secondary" src="./img/list_graphic_3.3.svg" alt="list tgraphic 3">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="how-works-button lg:mt-[150px] md:mt-20 mt-[30px] text-center">
+                        <a href="#" class="inline-block md:py-[30px] md:px-[50px] text-base rounded-[60px] bg-primary hover:bg-secondary hover:text-primary duration-200 text-white tracking-[1px] py-5 px-10">Explore more product features</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- delivery offering -->
+        <section class="delivery-offering md:px-10 px-4 relative z-10">
+            <div class="max-w-container mx-auto md:pt-0 pt-[50px]">
+                <div class="delivery-offering-wrapper bg-primary rounded-[40px] flex flex-wrap lg:py-125 md:justify-center md:py-28 md:px-0 relative z-10 pt-8 px-7">
+                    <div class="delivery-offreing-content lg:ml-[40%] lg:max-w-[544px] md:ml-0 md:w-auto md:max-w-[410px] w-full">
+                        <h1 class="text-white md:mb-[70px] max-w-[544px] mb-[30px]">Start offering delivery <span class="text-secondary">today</span></h1>
+                        <a href="#" class="inline-block bg-white text-primary hover:bg-secondary md:px-10 md:py-5 duration-200 tracking-[1px] rounded-[60px] py-5 px-10">Get Started</a>
+                    </div>
+                    <div class="send-graphic-icon">
+                        <img src="./img//send-icon.svg" alt="Send icon" class="absolute md:right-[30px] md:block hidden bottom-[30px] w-[73px]">
+                    </div>
+                    <div class="delivery-offering-img-wrapper md:absolute lg:left-[10%] lg:w-[18.5%] md:-left-4per md:w-[20%] bottom-0 flex flex-wrap justify-end relative">
+                        <img class="max-w-[183px] md:w-[84%] md:mt-0 mr-auto w-[40%] -mt-[50px]" src="./img/delivery-offering-img-1.png" alt="delivery offering img 1">
+                        <img class="max-w-[150px] w-[67%] mt-5 hidden md:block" src="./img/delivery-offering-img-2.svg" alt="delivery offering img 2">
+                        <img class="max-w-[150px] md:w-[67%] mt-5 md:hidden w-6/12" src="./img/delivery-offering-img-2-mobile.svg" alt="delivery offering img 2 mobile">
+                    </div>
+                </div>
+            </div>
+            <div class="delivery-offering-background absolute left-0 bottom-0 w-full h-2/4 bg-secondary"></div>
+        </section>
+
+
+
+        <!-- speed business -->
+        <section class="speed-business bg-secondary md:px-10 px-4">
+            <div class="max-w-container mx-auto lg:py-[150px] md:py-120 py-20">
+                <div class="speed-business-wrapper">
+                    <div class="speed-business-content flex justify-center flex-wrap text-center">
+                        <h3>Deliver at the speed of business</h3>
+                        <img class="md:my-[60px] rounded-[20px] w-full max-w-[798px]" src="./img/speed-business.jpg" alt="speed business">
+                        <h4 class="w-full max-w-[574px] mx-auto">
+                            Access an ecosystem of delivery tools and support at every step
+                        </h4>
+                    </div>
+                    <div class="speed-business-benefits-list grid grid-cols-3 gap-x-8 lg:mt-[150px] md:mt-[100px] mt-[50px] lg:mb-0 mb-[50px] md:-mx-5">
+
+                        <!-- speed business benefits item 1 -->
+                        <div class="speed-business-benefits-item md:px-5">
+                            <img class="w-[122px] h-[122px] mb-10" src="./img/team.svg" alt="team">
+                            <h6 class="text-xl mb-3.5 text-primary font-semibold">A team of delivery providers</h6>
+                            <p class="text-primary">With Nash, say goodbye to time spent on coordination and instead, gain full transparency on pricing, tracking, and coverage. Our pool of providers is built to meet any volume and type of job with consistency.</p>
+                        </div>
+
+                        <!-- speed business benefits item 2 -->
+                        <div class="speed-business-benefits-item md:px-5">
+                            <img class="w-[122px] h-[122px] mb-10" src="./img/support.svg" alt="team">
+                            <h6 class="text-xl mb-3.5 text-primary font-semibold">24/7 support</h6>
+                            <p class="text-primary">Gain support and resources to help troubleshoot roadblocks in real-time. Allowing you to get ahead of miscommunication and delays.</p>
+                        </div>
+
+                        <!-- speed business benefits item 3 -->
+                        <div class="speed-business-benefits-item md:px-5">
+                            <img class="w-[122px] h-[122px] mb-10" src="./img/api.svg" alt="team">
+                            <h6 class="text-xl mb-3.5 text-primary font-semibold">Integrative API</h6>
+                            <p class="text-primary">Save hundreds of hours by automating your delivery operations with our easy-to-use API. Designed to merge seamlessly with your existing platforms and integrations.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- community -->
+        <section class="community md:px-10 px-4 bg-primary">
+            <div class="max-w-container mx-auto md:py-0 pt-[50px]">
+                <div class="community-wrapper flex gap-y-16 flex-wrap items-center justify-between">
+                    <div class="community-content md:max-w-[534px] md:w-6/12 w-full">
+                        <h3 class="md:mb-[30px] mb-4 text-white">Impacting communities everywhere</h3>
+                        <p class="mb-[60px] text-white">Nash users increased their delivery volume by 2.5x Live in all 50 states & Canada</p>
+                        <a href="#" class="rounded-[60px] inline-block bg-white hover:bg-secondary text-primary py-5 px-10 text-base tracking-[1px] duration-200">Learn more about us</a>
+                    </div>
+                    <div class="community-graphic-wrapper md:max-w-[530px] md:w-[45%] w-full">
+                        <img class="w-[61%] max-w-[304px] mb-[20%] ml-12 hidden md:block" src="./img/community-1.svg" alt="community 1">
+                        <img class="relative z-30 md:w-full lg:-mt-[180px] lg:-mb-[267px] md:-mt-[104px] md:-mb-40 w-[63%] md:m-0 -mb-[235px] mx-auto" src="./img/community-2.webp" alt="community 2">
+                        <img class="ml-auto md:mr-4 max-w-[183px] md:w-[35%] w-[42%] mr-[20%]" src="./img/community-3.svg" alt="community 3">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- footer -->
+    <footer class="bg-primary relative z-20 md:px-10 px-4">
+        <div class="max-w-container mx-auto">
+            <div class="footer-wrapper grid md:grid-cols-3 gap-y-10 gap-x-10 py-[50px]">
+                <div class="footer-logo-copyright md:justify-self-start justify-self-center">
+                    <a class="duration-200 hover:opacity-80" href="#">
+                        <img class="w-[156px] md:mx-0 mx-auto" src="./img/logo-white.svg" alt="logo">
+                    </a>
+                    <div class="footer-copyright-text text-white mt-3 text-xs">© 2022 Nash. All right reserved.</div>
+                </div>
+                <div class="footer-legal-links flex items-center justify-center gap-x-10">
+                    <a class="text-white text-xs tracking-[.5px] duration-200 hover:opacity-60" href="#">Privacy Policy</a>
+                    <a class="text-white text-xs tracking-[.5px] duration-200 hover:opacity-60" href="#">Security</a>
+                </div>
+                <div class="footer-social-links grid grid-cols-2 gap-x-10 md:justify-self-end w-fit items-center justify-self-center">
+                    <a class="w-6 h-6 text-white hover:text-secondary duration-200" href="#">
+                        <svg width="100%" height="100%" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21.9708 6.46378C21.4547 7.15213 20.8309 7.75258 20.1235 8.24195C20.1235 8.42177 20.1235 8.60158 20.1235 8.79139C20.1292 12.0568 18.8249 15.1879 16.5029 17.4828C14.181 19.7777 11.0357 21.0443 7.77211 20.9988C5.88538 21.0051 4.02281 20.5743 2.3303 19.7401C2.23904 19.7003 2.18018 19.61 2.18053 19.5103V19.4005C2.18053 19.257 2.29676 19.1407 2.44014 19.1407C4.29475 19.0796 6.0832 18.4366 7.55244 17.3026C5.87376 17.2688 4.36338 16.2744 3.66829 14.7453C3.63318 14.6617 3.64411 14.5659 3.69713 14.4925C3.75016 14.419 3.83761 14.3785 3.9279 14.3856C4.43809 14.4369 4.95337 14.3894 5.44561 14.2458C3.59249 13.8611 2.20007 12.3227 2.0008 10.4397C1.99371 10.3494 2.03419 10.2619 2.10761 10.2088C2.18103 10.1558 2.27677 10.1448 2.36026 10.18C2.85755 10.3994 3.39439 10.515 3.93788 10.5196C2.31411 9.45384 1.61274 7.42672 2.23045 5.58469C2.29421 5.4057 2.4474 5.27347 2.63372 5.2366C2.82004 5.19972 3.01201 5.26365 3.13908 5.40487C5.33027 7.73695 8.34099 9.12662 11.5364 9.28088C11.4546 8.95427 11.4143 8.61862 11.4166 8.28191C11.4465 6.51636 12.5389 4.94357 14.1825 4.29986C15.826 3.65615 17.6953 4.06893 18.9153 5.34494C19.747 5.18651 20.551 4.90716 21.3018 4.51579C21.3568 4.48145 21.4265 4.48145 21.4815 4.51579C21.5158 4.57081 21.5158 4.64058 21.4815 4.6956C21.1178 5.52835 20.5035 6.2268 19.7241 6.69355C20.4066 6.6144 21.0771 6.45341 21.7211 6.21404C21.7754 6.17713 21.8466 6.17713 21.9009 6.21404C21.9463 6.23482 21.9802 6.27457 21.9937 6.32269C22.0072 6.37081 21.9988 6.42242 21.9708 6.46378Z" fill="currentColor"></path>
+                            <title>Twitter icon</title>
+                            </svg>
+                    </a>
+                    <a class="w-6 h-6 text-white hover:text-secondary duration-200" href="#">
+                        <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.0643 6.87891C14.7878 6.87891 13.7695 8.12408 13.1994 8.99607V7.18082H8.9126C8.96886 8.38474 8.9126 20.002 8.9126 20.002H13.1994V12.8422C13.1994 12.4597 13.2276 12.0771 13.3401 11.8033C13.6495 11.0382 14.3546 10.245 15.5398 10.245C17.0925 10.245 17.7132 11.4208 17.7132 13.1441V20.002H22V12.651C22 8.71103 19.8847 6.87891 17.0643 6.87891Z" fill="currentColor"></path>
+                            <path d="M6.53977 7.18066H2.25293V20.0018H6.53977V7.18066Z" fill="currentColor"></path>
+                            <path d="M4.42471 1C2.95826 1 2 1.95826 2 3.21468C2 4.44485 2.93013 5.43124 4.37033 5.43124H4.39846C5.89304 5.43124 6.82504 4.44672 6.82504 3.21468C6.79504 1.95638 5.89116 1 4.42471 1Z" fill="currentColor"></path>
+                            <title>LinkedIn icon</title>
+                            </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
